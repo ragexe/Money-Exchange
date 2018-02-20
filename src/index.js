@@ -1,4 +1,3 @@
-// PLEASE DON'T change function name
 module.exports = function makeExchange(currency) {
     let result = {};
     if (!currency) return result;
@@ -10,7 +9,7 @@ module.exports = function makeExchange(currency) {
         for (let a in config) {
             if (config[a] <= currency) {
                 result[a] = result[a] || 0;
-                result[a] += 1;
+                result[a]++;
                 currency -= config[a];
                 break;
             }
